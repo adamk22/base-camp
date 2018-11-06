@@ -1,45 +1,25 @@
-<p align="center"><img width="220" src="https://raw.githubusercontent.com/suomato/base-camp/develop/resources/assets/images/base-camp-logo.png"></p>
+## About Base Camp x DWVD
 
-<p align="center">
-<a href='https://packagist.org/packages/suomato/base-camp'><img src='https://poser.pugx.org/suomato/base-camp/v/stable.svg' alt="Dependency Status" /></a> <a href='https://packagist.org/packages/suomato/base-camp'><img src='https://poser.pugx.org/suomato/base-camp/v/unstable.svg' alt="Dependency Status" /></a> <a href="https://packagist.org/packages/suomato/base-camp"><img src="https://poser.pugx.org/suomato/base-camp/license.svg" alt="License"></a>
-</p>
+> A customized fork of the Base Camp starter theme.
 
-## About Base Camp
+## Customizations
 
-> Awesome WordPress starter theme with own CLI for developers based on modern web technologies.
-
-## Features
-* [Bulma](http://bulma.io/) (Responsive CSS framework based on Flexbox)
-* [Timber](https://www.upstatement.com/timber/)
-  * Twig Template Engine
-  * Cleaner and better code
-  * Separates the logic from presentation
-* [Webpack](https://webpack.github.io/)
-  * Sass / Scss for stylesheets (Minimize in production)
-  * ES6 for Javascript (Minimize in production)
-  * Automatic Cache Busting
-  * Split javascript code to two chunks, app.js and vendor.js
-  * [Vuejs](https://vuejs.org/) for boosting frontend development
-  * [BrowserSync](https://www.browsersync.io/) for synchronised browser testing
-* [Luna](https://github.com/suomato/luna) (Command-line interface included with Base Camp)
-* [WooCommerce](https://woocommerce.com/) support with basic boilerplate.
-
-## Requirements
-* [Wordpress](https://wordpress.org/) >= v4.9.6
-* [Composer](https://getcomposer.org/download/) >= v1.6.5
-* [PHP](http://php.net/manual/en/install.php) >= v7.0
-* [Yarn](https://yarnpkg.com/en/) >= v1.7.0 **or** [npm](https://www.npmjs.com/) >= v6.1.0
-* [Nodejs](https://nodejs.org/en/) >= v8.11.1
+-   Replaced Bulma with Boostrap 4
+-   Replaced SASS with SCSS and added a complete ITCSS structure
+-   Removed WooCommerce boilerplate code
 
 ## Installation
-* Go your themes folder and run`composer create-project suomato/base-camp`
-* `cd base-camp`
-* `yarn` **or** `npm install`
-* define your custom webpack config to `build/config.js` file
-* `yarn watch` **or** `npm run watch`
-* Happy developing :)
+
+-   Go your themes folder and run`git clone https://github.com/adamk22/base-camp.git theme-name`
+-   `cd theme-name`
+-   `yarn` **or** `npm install`
+-   `composer install`
+-   define your custom webpack config to `build/config.js` file
+-   `yarn watch` **or** `npm run watch`
+-   Happy developing :)
 
 ## Structure
+
 ```
 base-camp/                                          # Theme root
 ├── app/                                            # Theme logic
@@ -81,9 +61,11 @@ base-camp/                                          # Theme root
 ```
 
 ## Models
+
 > Models are wrapper classes for Wordpress Post Types and Taxonomies. They provide very simple interface to interact with the database.
 
 ### How to use
+
 ```
 // index.php
 
@@ -125,16 +107,16 @@ Post::inCategory(['cars', 'vehicles'])->get();
 ```
 
 > All queries are chainable. For example you can get three first incomplete posts authored by admin:
+
 ```
 Post::status('draft')->author('admin')->take(3)->get();
 ```
 
 All models are able to use almost every methods. However there are some exceptions:
 
-* Only `Post` model has `inCategory()` method
-* Taxonomies (Category, Tag) have `hideEmpty()` method
-
+-   Only `Post` model has `inCategory()` method
+-   Taxonomies (Category, Tag) have `hideEmpty()` method
 
 ## Luna (Command-line interface)
-> [Docs](https://github.com/suomato/luna)
 
+> [Docs](https://github.com/suomato/luna)
