@@ -35,7 +35,7 @@ if (!class_exists('Timber')) {
 |
 | Supported Mid size value: 1 - n
 |
-*/
+ */
 
 $pagination_mid_size = 2;
 
@@ -50,7 +50,7 @@ $pagination_mid_size += 2; // DON'T TOUCH
 |
 | Default path: 'resources/views'
 |
-*/
+ */
 
 Timber::$dirname = ['resources/views'];
 
@@ -67,7 +67,7 @@ function add_to_context($data)
     $data['menu'] = new TimberMenu();
 
     // Add main-sidebar to Timber context object
-    $data['main_sidebar'] = Timber::get_widgets('main-sidebar');
+    // $data['main_sidebar'] = Timber::get_widgets('main-sidebar');
 
     // Add Locale strings to Timber context object
     $data['messages'] = get_template_messages();

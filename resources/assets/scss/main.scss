@@ -1,0 +1,49 @@
+// ==========================================================================
+// Main Import File
+// ----------------
+// More information about ITCSS:
+// https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/
+// ==========================================================================
+
+// 0. Node Modules import
+// ----------------------------------------------
+@import '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+// 1. Settings - Variables
+// ----------------------------------------------
+@import '1_settings/fonts';
+@import '1_settings/icons';
+@import '1_settings/variables';
+
+// 2. Tools - Functions, Mixins, Helpers etc.
+// ----------------------------------------------
+@import '2_tools/helpers';
+@import '2_tools/mixins';
+
+// 3. Generic - 3rd Party CSS
+// ----------------------------------------------
+@import '3_generic/normalize';
+
+// 4. Elements - Bare and basic elements
+// ----------------------------------------------
+@import '4_elements/global';
+@import '4_elements/headings';
+@import '4_elements/links';
+@import '4_elements/lists';
+@import '4_elements/typography';
+@import '4_elements/buttons';
+@import '4_elements/forms';
+@import '4_elements/tables';
+
+// 5. Objects - Layout Classes
+// ----------------------------------------------
+@import '5_objects/header';
+@import '5_objects/footer';
+@import '5_objects/layout';
+
+// 6. Components - UI/Block Classes
+// ----------------------------------------------
+
+// 7. Trumps - IDs and !importants.
+// ----------------------------------------------
+@import '7_trumps/overrides';

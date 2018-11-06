@@ -3,7 +3,7 @@
 /**
  * Register scripts and styles and enqueue them
  */
-function base_camp_scripts_and_styles()
+function toto_scripts_and_styles()
 {
     // Register styles
     wp_register_style('base-camp-styles', assets('app.css'), [], '', 'all');
@@ -23,12 +23,12 @@ function base_camp_scripts_and_styles()
     }
 }
 
-add_action('wp_enqueue_scripts', 'base_camp_scripts_and_styles', 999);
+add_action('wp_enqueue_scripts', 'toto_scripts_and_styles', 999);
 
 /**
  * Register Login Page scripts and styles and enqueue them
  */
-function base_camp_login_scripts_and_styles()
+function toto_login_scripts_and_styles()
 {
     // Register styles
     wp_register_style('base-camp-login-styles', assets('login.css'), [], '', 'all');
@@ -37,12 +37,12 @@ function base_camp_login_scripts_and_styles()
     wp_enqueue_style('base-camp-login-styles');
 }
 
-add_action('login_enqueue_scripts', 'base_camp_login_scripts_and_styles', 999);
+add_action('login_enqueue_scripts', 'toto_login_scripts_and_styles', 999);
 
 /**
  * Register Admin Page scripts and styles and enqueue them
  */
-function base_camp_admin_scripts_and_styles()
+function toto_admin_scripts_and_styles()
 {
     // Register styles
     wp_register_style('base-camp-admin-styles', assets('admin.css'), [], '', 'all');
@@ -51,4 +51,4 @@ function base_camp_admin_scripts_and_styles()
     wp_enqueue_style('base-camp-admin-styles');
 }
 
-add_action('admin_enqueue_scripts', 'base_camp_admin_scripts_and_styles', 999);
+add_action('admin_enqueue_scripts', 'toto_admin_scripts_and_styles', 999);

@@ -1,0 +1,13 @@
+// ==========================================================================
+// 2. TOOLS / Helpers
+// ==========================================================================
+
+// Use this helper to reset links and its hover states
+// ---------------------------------------------------
+@mixin link-reset($color, $colorHover) {
+  color: $color;
+
+  &:focus, &:hover, &:active {
+    color: $colorHover;
+  }
+}

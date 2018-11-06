@@ -7,12 +7,12 @@ module.exports = {
    *
    * This is for Webpack that it can handle assets relative path right.
    */
-  assetsPath: '/wp-content/themes/base-camp/',
+  assetsPath: '/web/app/themes/caop/',
 
   /**
    * Define here your dev server url here.
    *
    * This is for Browsersync.
    */
-  devUrl: 'http://test.dev/',
+  devUrl: 'http://caop.test/'
 };

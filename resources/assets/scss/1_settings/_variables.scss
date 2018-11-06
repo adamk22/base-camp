@@ -1,0 +1,88 @@
+// ==========================================================================
+// 1. SETTINGS / Variables
+// ==========================================================================
+
+// ==========================================================================
+// Main Colors
+// http://chir.ag/projects/name-that-color/
+// ==========================================================================
+
+$white: #fff;
+$black: #000;
+$transparant: rgba(255, 255, 255, 0);
+
+$red: #e9070c;
+$green: #19ec13;
+$blue: #315ded;
+
+$color-base: $black;
+$color-brand: $black;
+
+// ==========================================================================
+// Font Family
+// ==========================================================================
+
+$font-sans: 'Helvetica', Arial, sans-serif;
+$font-serif: 'Times', serif;
+$icons: 'icomoon';
+
+$base-font-family: $font-sans;
+$font-base: $font-sans;
+$font-titles: $font-serif;
+
+// ==========================================================================
+// Font Sizes
+// ==========================================================================
+
+$fontsize-xsmall: 12px;
+
+$fontsize-small: 14px;
+
+$fontsize-base-mobile: 12px;
+$fontsize-base-tablet: 14px;
+$fontsize-base: 16px;
+
+$fontsize-h1-mobile: 24px;
+$fontsize-h1-tablet: 36px;
+$fontsize-h1: 48px;
+
+$fontsize-h2-mobile: 22px;
+$fontsize-h2-tablet: 28px;
+$fontsize-h2: 36px;
+
+$fontsize-h3-mobile: 18px;
+$fontsize-h3-tablet: 20px;
+$fontsize-h3: 24px;
+
+$fontsize-h4-mobile: 16px;
+$fontsize-h4-tablet: 18px;
+$fontsize-h4: 18px;
+
+$fontsize-h5-mobile: 14px;
+$fontsize-h5-tablet: 16px;
+$fontsize-h5: 16px;
+
+$fontsize-h6-mobile: 12px;
+$fontsize-h6-tablet: 14px;
+$fontsize-h6: 14px;
+
+// ==========================================================================
+// Lineheights
+// ==========================================================================
+
+$lineheight-base: 1.5;
+$lineheight-titles: 1.5;
+
+// ==========================================================================
+// Letter Spacings
+// ==========================================================================
+
+$letterspacing-base: 0.5px;
+$letterspacing-titles: 1px;
+
+// ==========================================================================
+// Transitions
+// ==========================================================================
+
+$transition-normal: all 200ms ease;
+$transition-fast: all 400ms ease;

@@ -11,18 +11,20 @@
 
 <script>
 export default {
-  data() {
-    return {
-      message: 'This is example component',
-    };
-  },
+	data() {
+		return {
+			message: 'This is example component'
+		};
+	}
 };
 </script>
 
-<style lang="sass" scoped>
-  .example-logo
-    max-width: 200px
+<style lang="scss" scoped>
+.example-logo {
+	max-width: 200px;
+}
 
-  .example-message
-    color: $bc-primary
+.example-message {
+	color: red;
+}
 </style>

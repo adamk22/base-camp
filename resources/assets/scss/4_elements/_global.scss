@@ -1,0 +1,32 @@
+// ==========================================================================
+// ELEMENTS - Global
+// ==========================================================================
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+  color: $color-base;
+  font-family: $font-base;
+  font-size: $fontsize-base-mobile;
+  line-height: $lineheight-base;
+  letter-spacing: $letterspacing-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size-adjust: auto;
+  position: relative;
+  margin: 0;
+}

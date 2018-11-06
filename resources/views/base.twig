@@ -1,23 +1,13 @@
 {% include 'header/index.twig' %}
 
 <section class="section">
-  <div class="container">
-    <div class="columns">
-
-      <div class="column is-7">
-        {% block content %}
-          {{ messages.base.no_content }}
-        {% endblock %}
-      </div>
-
-      <aside class="column is-4 is-offset-1">
-        {{ main_sidebar }}
-      </aside>
-
+    <div class="container">
+        <div class="col-12">
+            {% block content %}
+                {{ messages.base.no_content }}
+            {% endblock %}
+        </div>
     </div>
-  </div>
 </section>
 
 {% include 'footer/index.twig' %}
-
-

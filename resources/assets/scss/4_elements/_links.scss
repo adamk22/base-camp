@@ -1,0 +1,21 @@
+// ==========================================================================
+// ELEMENTS - Base links
+// ==========================================================================
+
+a {
+  color: $black;
+  text-decoration: underline;
+  transition: $transition-normal;
+
+  &:hover {
+    color: $red;
+  }
+
+  &:active {
+    color: inherit;
+  }
+
+  &:visited {
+    color: inherit;
+  }
+}

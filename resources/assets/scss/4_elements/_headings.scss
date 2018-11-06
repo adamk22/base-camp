@@ -1,0 +1,152 @@
+// ==========================================================================
+// ELEMENTS - Headings
+// ==========================================================================
+
+//
+// SCSS Placeholders
+// --------------------------------------------------------------------------
+
+%headings {
+  font-family: $font-titles;
+  line-height: $lineheight-titles;
+  letter-spacing: $letterspacing-titles;
+  font-weight: bold;
+  display: block;
+  margin: 0 0 .5em;
+  color: $black;
+
+  a {
+    text-decoration: none;
+    transition: $transition-normal;
+
+    &:hover {
+      color: $red;
+    }
+  }
+}
+
+%h1 {
+  font-size: $fontsize-h1-mobile;
+}
+
+%h2 {
+  font-size: $fontsize-h2-mobile;
+}
+
+%h3 {
+  font-size: $fontsize-h3-mobile;
+}
+
+%h4 {
+  font-size: $fontsize-h4-mobile;
+}
+
+%h5 {
+  font-size: $fontsize-h5-mobile;
+}
+
+%h6 {
+  font-size: $fontsize-h6-mobile;
+}
+
+// ==========================================================================
+// Min-width: 768px - Tablet Portrait and Landscape
+// ==========================================================================
+
+@media (min-width: 768px) {
+  %h1 {
+    font-size: $fontsize-h1-tablet;
+  }
+
+  %h2 {
+    font-size: $fontsize-h2-tablet;
+  }
+
+  %h3 {
+    font-size: $fontsize-h3-tablet;
+  }
+
+  %h4 {
+    font-size: $fontsize-h4-tablet;
+  }
+
+  %h5 {
+    font-size: $fontsize-h5-tablet;
+  }
+
+  %h6 {
+    font-size: $fontsize-h6-tablet;
+  }
+}
+
+
+// ==========================================================================
+// Min-width: 1024px - Desktop
+// ==========================================================================
+
+@media (min-width: 1024px) {
+  %h1 {
+    font-size: $fontsize-h1;
+  }
+
+  %h2 {
+    font-size: $fontsize-h2;
+  }
+
+  %h3 {
+    font-size: $fontsize-h3;
+  }
+
+  %h4 {
+    font-size: $fontsize-h4;
+  }
+
+  %h5 {
+    font-size: $fontsize-h5;
+  }
+
+  %h6 {
+    font-size: $fontsize-h6;
+  }
+}
+
+// ==========================================================================
+// Heading Classes
+// ==========================================================================
+
+h1,
+.h1 {
+  @extend %headings;
+  @extend %h1;
+}
+
+h2,
+.h2 {
+  @extend %headings;
+  @extend %h2;
+}
+
+h3,
+.h3 {
+  @extend %headings;
+  @extend %h3;
+}
+
+h4,
+.h4 {
+  @extend %headings;
+  @extend %h4;
+}
+
+h5,
+.h5 {
+  @extend %headings;
+  @extend %h5;
+}
+
+h6,
+.h6 {
+  @extend %headings;
+  @extend %h6;
+  font-weight: 600;
+}

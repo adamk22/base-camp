@@ -17,13 +17,13 @@ const scriptHash = inProduction ? 'chunkhash' : 'hash';
 const extractCss = {
   loader: MiniCssExtractPlugin.loader,
   options: {
-    publicPath: `${config.assetsPath}static/css/`,
-  },
+    publicPath: `${config.assetsPath}static/css/`
+  }
 };
 
 const cssLoader = {
   loader: 'css-loader',
-  options: { minimize: inProduction },
+  options: { minimize: inProduction }
 };
 
 module.exports = {
@@ -31,26 +31,26 @@ module.exports = {
     app: glob.sync('./resources/assets/+(s[ac]ss|js)/main.+(s[ac]ss|js)'),
     login: glob.sync('./resources/assets/+(s[ac]ss|js)/login.+(s[ac]ss|js)'),
     admin: glob.sync('./resources/assets/+(s[ac]ss|js)/admin.+(s[ac]ss|js)'),
-    vendor: ['jquery', 'vue'],
+    vendor: ['jquery', 'vue']
   },
   output: {
     path: path.resolve(__dirname, '../static/'),
-    filename: `js/[name].[${scriptHash}].js`,
+    filename: `js/[name].[${scriptHash}].js`
   },
 
   module: {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        loader: 'babel-loader'
       },
       {
         test: /\.css$/,
-        use: ['vue-style-loader', extractCss, cssLoader],
+        use: ['vue-style-loader', extractCss, cssLoader]
       },
       {
         test: /\.scss$/,
@@ -61,31 +61,11 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [
-                path.resolve(__dirname, '../resources/assets/sass'),
-              ],
-              data: '@import "variables";',
-            },
-          },
-        ],
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          'vue-style-loader',
-          extractCss,
-          cssLoader,
-          {
-            loader: 'sass-loader',
-            options: {
-              indentedSyntax: true,
-              includePaths: [
-                path.resolve(__dirname, '../resources/assets/sass'),
-              ],
-              data: '@import "variables";',
-            },
-          },
-        ],
+              includePaths: [path.resolve(__dirname, '../resources/assets/scss')],
+              data: '@import "1_settings/variables";'
+            }
+          }
+        ]
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/,
@@ -95,11 +75,11 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'images/',
-              publicPath: `${config.assetsPath}static/images/`,
-            },
+              publicPath: `${config.assetsPath}static/images/`
+            }
           },
-          'image-webpack-loader',
-        ],
+          'image-webpack-loader'
+        ]
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -108,10 +88,10 @@ module.exports = {
           limit: 10000,
           name: '[name].[hash:7].[ext]',
           outputPath: 'fonts/',
-          publicPath: `${config.assetsPath}static/fonts/`,
-        },
-      },
-    ],
+          publicPath: `${config.assetsPath}static/fonts/`
+        }
+      }
+    ]
   },
 
   optimization: {
@@ -121,18 +101,18 @@ module.exports = {
           chunks: 'all',
           name: 'vendor',
           test: 'vendor',
-          enforce: true,
-        },
-      },
-    },
+          enforce: true
+        }
+      }
+    }
   },
 
   resolve: {
     alias: {
       vue$: 'vue/dist/vue.esm.js',
-      images: path.join(__dirname, '../resources/assets/images'),
+      images: path.join(__dirname, '../resources/assets/images')
     },
-    extensions: ['*', '.js', '.vue', '.json'],
+    extensions: ['*', '.js', '.vue', '.json']
   },
 
   plugins: [
@@ -140,17 +120,16 @@ module.exports = {
 
     new CleanWebpackPlugin(['static/css/*', 'static/js/*'], {
       root: path.join(__dirname, '../'),
-      watch: true,
+      watch: true
     }),
 
     new MiniCssExtractPlugin({
-      filename: `css/[name].[${styleHash}].css`,
+      filename: `css/[name].[${styleHash}].css`
     }),
 
     new PurgecssPlugin({
-      paths: () =>
-        glob.sync(path.join(__dirname, '../resources/**/*'), { nodir: true }),
-      only: ['app'],
+      paths: () => glob.sync(path.join(__dirname, '../resources/**/*'), { nodir: true }),
+      only: ['app']
     }),
 
     new ManifestPlugin(),
@@ -159,7 +138,7 @@ module.exports = {
       host: 'localhost',
       port: 3000,
       proxy: config.devUrl, // YOUR DEV-SERVER URL
-      files: ['./*.php', './resources/views/**/*.twig', './static/*.*'],
-    }),
-  ],
+      files: ['./*.php', './resources/views/**/*.twig', './static/*.*']
+    })
+  ]
 };
