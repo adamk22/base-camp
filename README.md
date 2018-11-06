@@ -7,6 +7,7 @@
 -   Replaced Bulma with Boostrap 4
 -   Replaced SASS with SCSS and added a complete ITCSS structure
 -   Removed WooCommerce boilerplate code
+-       Removed some other boilerplate code **we** don't need
 
 ## Installation
 
