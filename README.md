@@ -7,15 +7,25 @@
 -   Replaced Bulma with Boostrap 4
 -   Replaced SASS with SCSS and added a complete ITCSS structure
 -   Removed WooCommerce boilerplate code
--       Removed some other boilerplate code **we** don't need
+-   Removed some other boilerplate code **we** don't need
 
-## Installation
+## Installation (Theme Only)
 
 -   Go your themes folder and run`git clone https://github.com/adamk22/base-camp.git theme-name`
 -   `cd theme-name`
 -   `yarn` **or** `npm install`
 -   `composer install`
 -   define your custom webpack config to `build/config.js` file
+-   create a .env file based on the .env.example
+-   `yarn watch` **or** `npm run watch`
+-   Happy developing :)
+
+## Installation (Using Bedrock provisioning file)
+
+-   Follow the instructions that comes with the [provisioning file](https://github.com/adamk22/WP-Bedrock-VVV-2.0-Provisioning).
+-   The provisioning file will install the theme, run composer and npm.
+-   define your custom webpack config to `build/config.js` file
+-   create a .env file based on the .env.example
 -   `yarn watch` **or** `npm run watch`
 -   Happy developing :)
 
