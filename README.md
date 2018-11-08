@@ -2,12 +2,19 @@
 
 > A customized fork of the Base Camp starter theme.
 
+## TODO
+
+-   Remove template files
+-   Refactor admin code in config
+
 ## Customizations
 
 -   Replaced Bulma with Boostrap 4
 -   Replaced SASS with SCSS and added a complete ITCSS structure
 -   Removed WooCommerce boilerplate code
 -   Removed some other boilerplate code **we** don't need
+-   Added Javascript workflow based on routes (based from Sage 9.0)
+-   Added 2 additional files in `/config` to clean up the admin panel and config roles
 
 ## Installation (Theme Only)
 
