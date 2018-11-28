@@ -2,6 +2,8 @@
 
 > A customized fork of the Base Camp starter theme.
 
+A gentle warning. This fork has undocumented changes. Use at own risk. Will document it better when I have the time :-)
+
 ## Customizations
 
 -   Replaced Bulma with Boostrap 4
