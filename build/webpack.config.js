@@ -127,10 +127,10 @@ module.exports = {
       filename: `css/[name].[${styleHash}].css`
     }),
 
-    new PurgecssPlugin({
-      paths: () => glob.sync(path.join(__dirname, '../resources/**/*'), { nodir: true }),
-      only: ['app']
-    }),
+    // new PurgecssPlugin({
+    //   paths: () => glob.sync(path.join(__dirname, '../resources/**/*'), { nodir: true }),
+    //   only: ['app']
+    // }),
 
     new ManifestPlugin(),
 
