@@ -6,6 +6,9 @@
 
 -   Remove template files
 -   Refactor admin code in config
+-   Alternative dist folder with prod/dev flag/environments (webpack, eg: dist-dev)
+-	Remove or refactor the purgeCss webpack module?
+-	Add wp ajax?
 
 A gentle warning. This fork has undocumented changes. Use at own risk. Will document it better when I have the time :-)
 
