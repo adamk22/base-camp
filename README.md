@@ -4,11 +4,9 @@
 
 ## TODO
 
--   Remove template files
 -   Refactor admin code in config
 -   Alternative dist folder with prod/dev flag/environments (webpack, eg: dist-dev)
--	Remove or refactor the purgeCss webpack module?
--	Add wp ajax?
+-   Remove or refactor the purgeCss webpack module?
 
 A gentle warning. This fork has undocumented changes. Use at own risk. Will document it better when I have the time :-)
 
@@ -28,7 +26,7 @@ A gentle warning. This fork has undocumented changes. Use at own risk. Will docu
 -   `yarn` **or** `npm install`
 -   `composer install`
 -   define your custom webpack config to `build/config.js` file
--   create a .env file based on the .env.example
+-   create a .env file based on the .env.example (or just rename it to .env)
 -   `yarn watch` **or** `npm run watch`
 -   Happy developing :)
 
