@@ -9,12 +9,13 @@ module.exports = {
 	 * 	assetsPath: '/wp-content/themes/theme-name/' for regular wp configs
 	 */
 
-	assetsPath: '/web/app/themes/theme-name/',
+	assetsPath: "/web/app/themes/theme-name/",
+	fontPath: "/app/themes/theme-name/",
 
 	/**
 	 * Define here your dev server url here.
 	 *
 	 * This is for Browsersync.
 	 */
-	devUrl: 'http://site-name.test/'
+	devUrl: "http://site-name.test/"
 };
