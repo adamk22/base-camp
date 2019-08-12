@@ -1,13 +1,14 @@
 const webpack = require("webpack");
 const path = require("path");
 const glob = require("glob");
+const devMode = process.env.NODE_ENV !== "production";
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const ManifestPlugin = require("webpack-manifest-plugin");
 const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const config = require("./config");
+const configFile = require("./config");
 
 const inProduction = process.env.NODE_ENV === "production";
 const styleHash = inProduction ? "contenthash" : "hash";
@@ -17,7 +18,7 @@ const scriptHash = inProduction ? "chunkhash" : "hash";
 const extractCss = {
 	loader: MiniCssExtractPlugin.loader,
 	options: {
-		publicPath: `${config.assetsPath}static/css/`
+		publicPath: `${configFile.assetsPath}static/css/`
 	}
 };
 
@@ -25,8 +26,7 @@ const cssLoader = {
 	loader: "css-loader",
 	options: { minimize: inProduction }
 };
-
-module.exports = {
+const config = {
 	entry: {
 		app: glob.sync("./resources/assets/+(s[ac]ss|js)/main.+(s[ac]ss|js)"),
 		login: glob.sync(
@@ -39,7 +39,7 @@ module.exports = {
 	},
 	output: {
 		path: path.resolve(__dirname, "../static/"),
-		filename: `js/[name].[${scriptHash}].js`
+		filename: devMode ? "js/[name].js" : `js/[name].[${scriptHash}].js`
 	},
 
 	module: {
@@ -84,7 +84,7 @@ module.exports = {
 						options: {
 							name: "[name].[ext]",
 							outputPath: "images/",
-							publicPath: `${config.fontPath}static/images/`
+							publicPath: `${configFile.fontPath}static/images/`
 						}
 					},
 					"image-webpack-loader"
@@ -97,9 +97,11 @@ module.exports = {
 						loader: "file-loader",
 						options: {
 							limit: 10000,
-							name: "[name].[hash:7].[ext]",
+							name: devMode
+								? "[name].[ext]"
+								: "[name].[hash:7].[ext]",
 							outputPath: "fonts/",
-							publicPath: `${config.fontPath}static/fonts/`
+							publicPath: `${configFile.fontPath}static/fonts/`
 						}
 					}
 				]
@@ -129,15 +131,16 @@ module.exports = {
 	},
 
 	plugins: [
+		new webpack.ProvidePlugin({
+			$: "jquery/dist/jquery.js",
+			jQuery: "jquery/dist/jquery.js"
+		}),
 		new VueLoaderPlugin(),
 
-		new CleanWebpackPlugin(["static/css/*", "static/js/*"], {
-			root: path.join(__dirname, "../"),
-			watch: true
-		}),
-
 		new MiniCssExtractPlugin({
-			filename: `css/[name].[${styleHash}].css`
+			filename: devMode
+				? "css/[name].css"
+				: `css/[name].[${styleHash}].css`
 		}),
 
 		// removes css used in javascript, so disabled for now
@@ -151,8 +154,17 @@ module.exports = {
 		new BrowserSyncPlugin({
 			host: "localhost",
 			port: 3000,
-			proxy: config.devUrl, // YOUR DEV-SERVER URL
+			proxy: configFile.devUrl, // YOUR DEV-SERVER URL
 			files: ["./*.php", "./resources/views/**/*.twig", "./static/*.*"]
 		})
 	]
 };
+if (process.env.NODE_ENV === "production") {
+	config.plugins.push(
+		new CleanWebpackPlugin(["static/css/*", "static/js/*"], {
+			root: path.join(__dirname, "../"),
+			watch: true
+		})
+	);
+}
+module.exports = config;
